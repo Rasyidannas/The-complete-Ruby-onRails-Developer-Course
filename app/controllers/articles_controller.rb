@@ -12,6 +12,11 @@ class ArticlesController < ApplicationController
         @article = Article.new
     end
 
+    def edit 
+        # byebug
+        @article = Article.find(params[:id])
+    end
+
     def create
         # render plain: params[:article] #this will render into browser after save
 
@@ -24,5 +29,16 @@ class ArticlesController < ApplicationController
         end
 
       # render plain: @article.inspect
+    end
+
+    def update
+        # byebug
+        @article = Article.find(params[:id])
+        if @article.update(params.require(:article).permit(:title, :description))
+            flash[:notice] = "Article was updated successfully"
+            redirect_to @article
+        else
+            render 'edit'
+        end
     end
 end
