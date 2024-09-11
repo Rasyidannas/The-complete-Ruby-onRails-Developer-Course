@@ -10,9 +10,8 @@
   </head>
 
   <body>
-    <% flash.each do |name, msg| %>
-      <%= msg %>
-    <% end %>
+    <%# this will get partial file (_messages.html.erb) %>
+    <%= render 'layouts/messages' %>
 
     <%= yield %>
   </body>
