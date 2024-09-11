@@ -13,8 +13,7 @@ $ docker-compose exec web ./bin/rails db:create
 
 You can see Rails top page on http://localhost:3000/.
 
-
-## pry
+## pry or byebug
 
 If you want to attach a docker process after you stop at a break point with pry, use the following command.
 
