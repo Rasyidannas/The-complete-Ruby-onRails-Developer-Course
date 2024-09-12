@@ -27,3 +27,12 @@ ENTRYPOINT ["entrypoint.sh"]
 EXPOSE 3000
 
 CMD ["rails", "server", "-b", "0.0.0.0"]
+
+# Example Dockerfile snippet
+FROM node:14
+
+# Set the working directory
+WORKDIR /app
+
+# Install Yarn
+RUN npm install -g yarn
