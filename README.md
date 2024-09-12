@@ -32,3 +32,11 @@ For instance, you can set like tag=0.0.4 in the following command.
 ```
 $ ./bin/build-and-push-image $tag
 ```
+
+## Connect to Tableplus
+
+**host:** `172.17.0.1`
+**port:** `5432`
+**user:** `postgres`
+**root:** `root`
+**database name:** `app_development`
