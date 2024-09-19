@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
     # render plain: params[:article] #this will render into browser after save
 
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       flash[:notice] = "Article was created successfully."
       redirect_to @article
