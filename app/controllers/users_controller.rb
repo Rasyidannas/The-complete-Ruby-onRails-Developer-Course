@@ -16,17 +16,17 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def update 
+  def update
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "Your account information was successfully updated"
-      redirect_to articles_path
+      redirect_to @user
     else
       render 'edit'
     end
   end
 
-  def create 
+  def create
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Welcome to the Alpha Blog #{@user.username}, you have successfully signed up"
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
-  
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)

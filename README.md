@@ -38,5 +38,5 @@ $ ./bin/build-and-push-image $tag
 **host:** `172.17.0.1`
 **port:** `5432`
 **user:** `postgres`
-**root:** `root`
+**pass:** `root`
 **database name:** `app_development`
